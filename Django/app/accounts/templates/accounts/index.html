@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Todos{% endblock title %}
+{% block content %}
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="{% url "login" %}">Login</a>
+      </li>
+      <li>
+        <a href="{% url "register" %}">Register</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+Todo App
+</main>
+{% endblock content %}

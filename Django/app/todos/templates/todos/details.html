@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}
+Todo Details
+{% endblock title %}
+{% block content %}
+<main>
+  <form action="{% url "todo-details" pk=todo.pk %}">
+    <fieldset>
+      <legend>Todo Details</legend>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-input">
+        {% if form.title.errors %}
+        <ul>
+          {% for error in form.title.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.title.label_tag}}
+        {{ form.title }}
+      </div>
+      <div class="form-input">
+        {% if form.description.errors %}
+        <ul>
+          {% for error in form.description.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.description.label_tag}}
+        {{ form.description }}
+      </div>
+      <div class="form-input">
+        {% if form.is_complete.errors %}
+        <ul>
+          {% for error in form.is_complete.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.is_complete.label_tag}}
+        {{ form.is_complete}}
+      </div>
+      <button type="submit">Update</button>
+    </fieldset>
+  </form>
+</main>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Create Todo{% endblock title %}
+{% block content %}
+<main>
+  <form action="{% url "create-todo" %}" method="post">
+    <fieldset>
+      <legend>Create Todo</legend>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="form-input">
+        {% if form.title.errors %}
+        <ul>
+          {% for error in form.title.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.title.label_tag }}
+        {{ form.title }}
+      </div>
+      <div class="form-input">
+        {% if form.description.errors %}
+        <ul>
+          {% for error in form.description.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.description.label_tag }}
+        {{ form.description }}
+      </div>
+      <button type="submit">Create Todo</button>
+    </fieldset>
+  </form>
+</main>
+{% endblock content %}
