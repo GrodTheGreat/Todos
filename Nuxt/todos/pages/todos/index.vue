@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import {
+  VBtn,
+  VCheckbox,
+  VFab,
+  VIcon,
+  VList,
+  VListItem,
+} from "vuetify/components";
+
 import type { Todo } from "~/types/todo";
 
 const todos = ref<Todo[]>([
@@ -17,11 +26,27 @@ const todos = ref<Todo[]>([
   <main>
     <h1>All Todos</h1>
     <div>
-      <ul>
-        <li v-for="todo in todos" :key="todo.id">
-          <TodoItem :todo />
-        </li>
-      </ul>
+      <v-list lines="two">
+        <v-list-item
+          v-for="todo in todos"
+          :key="todo.id"
+          :title="todo.title"
+          :subtitle="todo.description"
+        >
+          <template #prepend>
+            <v-checkbox color="primary"></v-checkbox>
+          </template>
+          <template #append>
+            <v-btn>
+              <v-icon icon="mdi-pencil" color="warning"></v-icon>
+            </v-btn>
+            <v-btn>
+              <v-icon icon="mdi-delete" color="error"></v-icon>
+            </v-btn>
+          </template>
+        </v-list-item>
+      </v-list>
     </div>
+    <v-fab icon="mdi-plus" location="right bottom" absolute></v-fab>
   </main>
 </template>
