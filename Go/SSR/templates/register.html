@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+  <main>
+    <h1>Register</h1>
+    <form action="/register" method="post">
+      <fieldset>
+        <legend>Register</legend>
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+          <label for="given-name">First Name</label>
+          <input type="text" name="given-name" id="given-name">
+        </div>
+        <div>
+          <label for="surname">Last Name</label>
+          <input type="text" name="surname" id="surname">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+          <label for="confirm">Confirm Password</label>
+          <input type="password" name="confirm" id="confirm" required>
+        </div>
+        <button type="submit">Register</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
