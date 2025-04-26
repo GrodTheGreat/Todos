@@ -9,6 +9,8 @@ import (
 type User struct {
 	gorm.Model
 	Username     string
+	GivenName    string
+	Surname      string
 	Email        string
 	PasswordHash string
 	IsActive     bool
