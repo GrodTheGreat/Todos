@@ -12,7 +12,7 @@ type Todo struct {
 	Title       string
 	Description *string
 	Due         *time.Time
-	IsCompleted bool
+	IsComplete  bool
 	PriorityID  *uint
 	StatusID    *uint
 	Tags        []Tag
