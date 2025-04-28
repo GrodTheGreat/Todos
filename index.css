@@ -130,6 +130,10 @@ main {
   font-weight: 500;
   cursor: pointer;
 }
+.todo__edit-button a {
+  text-decoration: none;
+  color: white;
+}
 .todo__delete-button {
   background-color: #d32f2f;
   color: white;
