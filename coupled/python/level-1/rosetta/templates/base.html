@@ -12,7 +12,9 @@
 </head>
 <body>
   <div class="app">
+    {% include "components/header.html" %}
   {% block content %}{% endblock content %}
+  {% include "components/footer.html" %}
   </div>
 </body>
 </html>
