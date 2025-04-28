@@ -12,15 +12,17 @@
 </div>
 <div class="form">
   <h2>Create</h2>
-  <form action="/todo" method="post">
+  <form action="/create" method="post">
     {% csrf_token %}
     <fieldset>
       <legend>Create Todo</legend>
       <div class="form-input">
+        {{ form.title.errors }}
         {{ form.title.label_tag }}
         {{ form.title }}
       </div>
       <div class="form-input">
+        {{ form.description.errors }}
         {{ form.description.label_tag}}
         {{ form.description }}
       </div>
