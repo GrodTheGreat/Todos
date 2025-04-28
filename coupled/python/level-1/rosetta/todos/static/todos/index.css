@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.app {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  height: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  align-content: center;
+  background-color: #1565c0;
+  color: white;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 10px black;
+}
+.header__home {
+  text-decoration: none;
+}
+.header__headline {
+  margin: 0 16px;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+main {
+  flex-grow: 1;
+  padding: 0 16px;
+}
+.todos h2 {
+  margin-top: 32px;
+  font-size: 1.5rem;
+}
+.action-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+.action-button button {
+  background-color: #1565c0;
+  border: none;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  color: white;
+  font-size: 2.5rem;
+  box-shadow: 0 0 8px black;
+  cursor: pointer;
+}
+.action-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+}
+.todo-list {
+  padding: 8px 0;
+}
+.todo-item:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+.todo__card {
+  display: flex;
+  min-height: 72px;
+  padding: 8px 0;
+}
+.todo__complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+}
+.todo__complete input {
+  height: 24px;
+  width: 24px;
+  background-color: #1565c0;
+}
+.todo__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.todo__title {
+  margin-bottom: 8px;
+}
+.todo__title-content {
+  font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+.todo__description-content {
+  color: #444;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.todo__title-content--complete,
+.todo__description-content--complete {
+  text-decoration: line-through;
+  color: #777;
+}
+.todo__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todo__edit-button {
+  background-color: #1565c0;
+  color: white;
+  border: none;
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px black;
+  font-weight: 500;
+  cursor: pointer;
+}
+.todo__edit-button a {
+  text-decoration: none;
+  color: white;
+}
+.todo__delete-button {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px black;
+  font-weight: 500;
+  cursor: pointer;
+}
+footer {
+  flex-shrink: 0;
+}
+.legal {
+  height: 48px;
+}
+footer hr {
+  border-top: 1px solid #66666658;
+  border-bottom: none;
+}
+.copyright {
+  height: 100%;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 1080px) {
+  main {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
