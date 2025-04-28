@@ -1,6 +1,8 @@
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django import views
 
 
-# Create your views here.
-def index(request):
-    return render(request=request, template_name="todos/index.html")
+class Index(views.View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request=request, template_name="todos/index.html")
