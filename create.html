@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/create.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <a href="/" class="header__home">
+          <h3 class="header__headline">Todo App</h3>
+        </a>
+      </header>
+      <main>
+        <div class="action-button">
+          <button><a href="/">Home</a></button>
+        </div>
+        <div class="create">
+          <h2>Create</h2>
+          <form action="/todo" method="post">
+            <fieldset>
+              <legend>Create Todo</legend>
+              <div class="form-input">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  required
+                  class="form-input__text"
+                  placeholder="Todo"
+                />
+              </div>
+              <div class="form-input">
+                <label for="description">Description</label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  class="form-input__text"
+                  placeholder="(Optional)"
+                />
+              </div>
+              <button type="submit" class="form-submit">Create</button>
+            </fieldset>
+          </form>
+        </div>
+      </main>
+      <footer>
+        <hr />
+        <div class="legal">
+          <div class="copyright">
+            <span class="copyright__content">
+              &copy; <span class="copyright__date"></span>, All Rights Reserved
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
