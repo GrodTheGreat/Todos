@@ -6,3 +6,8 @@ from django import views
 class Index(views.View):
     def get(self, request: HttpRequest) -> HttpResponse:
         return render(request=request, template_name="todos/index.html")
+
+
+class Create(views.View):
+    def get(self, request: HttpRequest) -> HttpResponse:
+        return render(request=request, template_name="todos/create.html")
