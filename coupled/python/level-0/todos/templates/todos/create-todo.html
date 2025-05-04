@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Add | Todos
+{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'todo-list' %}">All Todos</a>
+
+    <form action="{% url 'create-todo' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add Todo</button>
+    </form>
+{% endblock content %}

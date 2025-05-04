@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Details | Todos
+{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'todo-list' %}">All Todos</a>
+    <a href="{% url 'update-todo' pk=todo.pk %}">Edit</a>
+    <a href="{% url 'delete-todo' pk=todo.pk %}">Delete</a>
+
+    <p>{{ todo.title }}</p>
+    <p>{{ todo.description }}</p>
+    <p>
+        {% if todo.is_complete %}
+        	Done!
+        {% else %}
+            &nbsp;
+        {% endif %}
+    </p>
+{% endblock content %}

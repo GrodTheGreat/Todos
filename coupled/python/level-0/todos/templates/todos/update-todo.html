@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Edit | Todos
+{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'todo-list' %}">All Todos</a>
+    <a href="{% url 'todo-detail' pk=id %}">Return</a>
+    <a href="{% url 'delete-todo' pk=id %}">Delete</a>
+
+    <form  action="{% url 'update-todo' pk=id %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Edit Todo</button>
+    </form>
+{% endblock content %}
