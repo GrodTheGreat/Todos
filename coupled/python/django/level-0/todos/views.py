@@ -6,7 +6,7 @@ from .models import Todo
 from .forms import CreateTodoForm, DeleteTodoForm, EditTodoForm
 
 
-class TodoListView(views.View):
+class TodoIndexView(views.View):
     # noinspection PyMethodMayBeStatic
     def get(self, request: HttpRequest) -> HttpResponse:
         todos = Todo.objects.all()
