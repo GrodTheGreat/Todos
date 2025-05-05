@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,csharp,django,python,windows,aspnetcore,visualstudio,jetbrains+all,visualstudiocode,ruby,rubymine+all,rails
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,csharp,django,python,windows,aspnetcore,visualstudio,jetbrains+all,visualstudiocode,ruby,rubymine+all,rails
+# Created by https://www.toptal.com/developers/gitignore/api/ruby,linux,macos,rails,csharp,django,python,windows,aspnetcore,rubymine+all,visualstudio,jetbrains+all,visualstudiocode,laravel
+# Edit at https://www.toptal.com/developers/gitignore?templates=ruby,linux,macos,rails,csharp,django,python,windows,aspnetcore,rubymine+all,visualstudio,jetbrains+all,visualstudiocode,laravel
 
 ### ASPNETCore ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -778,6 +778,29 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
+### Laravel ###
+/vendor/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+public_html/storage
+public_html/hot
+
+storage/*.key
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+
 ### Linux ###
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -1306,4 +1329,4 @@ $RECYCLE.BIN/
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,csharp,django,python,windows,aspnetcore,visualstudio,jetbrains+all,visualstudiocode,ruby,rubymine+all,rails
+# End of https://www.toptal.com/developers/gitignore/api/ruby,linux,macos,rails,csharp,django,python,windows,aspnetcore,rubymine+all,visualstudio,jetbrains+all,visualstudiocode,laravel
