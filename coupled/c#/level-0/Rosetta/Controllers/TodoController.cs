@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Rosetta.Data;
 using Rosetta.Models;
@@ -33,8 +28,7 @@ namespace Rosetta.Controllers
                 return NotFound();
             }
 
-            var todo = await _context.Todos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var todo = await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
             if (todo == null)
             {
                 return NotFound();
@@ -54,7 +48,7 @@ namespace Rosetta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,IsComplete")] Todo todo)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description")] Todo todo)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +80,10 @@ namespace Rosetta.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,IsComplete")] Todo todo)
+        public async Task<IActionResult> Edit(
+            int id,
+            [Bind("Id,Title,Description,IsComplete")] Todo todo
+        )
         {
             if (id != todo.Id)
             {
@@ -124,8 +121,7 @@ namespace Rosetta.Controllers
                 return NotFound();
             }
 
-            var todo = await _context.Todos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var todo = await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
             if (todo == null)
             {
                 return NotFound();
